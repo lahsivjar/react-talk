@@ -1,0 +1,49 @@
+{
+  "name": "react-talk",
+  "version": "0.0.1",
+  "description": "React talk/chat component",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "lint": "eslint src/*",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lahsivjar/react-talk.git"
+  },
+  "keywords": [
+    "react",
+    "chat",
+    "chat-box"
+  ],
+  "author": "lahsivjar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lahsivjar/react-talk/issues"
+  },
+  "homepage": "https://github.com/lahsivjar/react-talk#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.13.1",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-react": "^7.5.1",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
+  }
+}
