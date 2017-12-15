@@ -1,5 +1,7 @@
 src
+style
 test
 npm-debug.log
+webpack*.js
 .babelrc
 .eslintrc

@@ -4,8 +4,10 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: __dirname,
-    filename: "./dist/index.js"
+    path: path.join(__dirname, "/dist"),
+    filename: "index.js",
+    library: "react-talk",
+    libraryTarget: "umd"
   },
   plugins: [
     new CleanWebpackPlugin([ "dist" ])
@@ -13,14 +15,14 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: path.join(__dirname, "./src"),
+        test: path.join(__dirname, "/src"),
         loader: "babel-loader",
         query: {
-          presets: ["env", "react"]
+          presets: ["env", "react", "stage-2"]
         }
       },
       {
-        test: path.join(__dirname, "./style"),
+        test: path.join(__dirname, "/style"),
         loader: "style-loader!css-loader!sass-loader"
       }
     ]
