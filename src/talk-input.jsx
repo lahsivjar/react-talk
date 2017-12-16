@@ -19,7 +19,7 @@ class TalkInput extends React.Component {
     super(props);
     this.state = {
       message: ""
-    }
+    };
   }
 
   onEnterPress = () => {
