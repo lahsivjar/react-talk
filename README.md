@@ -1,4 +1,4 @@
-# react-chat-box
+# react-talk
 
 React component for chat box UI with pluggable support for SockJS client via [react-stomp](https://github.com/lahsivjar/react-stomp)
 
