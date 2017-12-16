@@ -24,15 +24,23 @@ class TalkMessage extends React.Component {
   }
 
   render() {
-    const contentClassName = classNames({
-      "talk-message-content": true,
-      "self-posted": this.props.selfPosted
+    const topWrapper = classNames({
+      "talk-message-wrapper": true,
+      "right": this.props.selfPosted,
+      "left": !this.props.selfPosted
+    });
+    const contentWrapper = classNames({
+      "talk-message-content-wrapper": true,
+      "right": this.props.selfPosted,
+      "left": !this.props.selfPosted
     });
     return(
-      <div className="talk-message-wrapper">
-        <span className={ contentClassName }>
-          { this.state.message }
-        </span>
+      <div className={ topWrapper }>
+        <div className={ contentWrapper }>
+          <span className="talk-message-content-span">
+            { this.state.message }
+          </span>
+        </div>
       </div>
     );
   }

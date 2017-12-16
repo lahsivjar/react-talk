@@ -4,8 +4,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import TalkMessage from "./talk-message.jsx";
 import TalkInput from "./talk-input.jsx";
+import { animateScroll as scroll } from "react-scroll";
 
 const similarity = require("similarity");
+const htmlId = require("react-html-id");
 
 class TalkBox extends React.Component {
 
@@ -18,9 +20,15 @@ class TalkBox extends React.Component {
 
   constructor(props) {
     super(props);
+    htmlId.enableUniqueIds(this);
+    this.talkBoxId = this.nextUniqueId();
     this.state = {
       topic: this.props.topic
     };
+  }
+
+  scrollToBottom = () => {
+    scroll.scrollToBottom({ containerId: this.talkBoxId });
   }
 
   onTopicChange = (newTopic) => {
@@ -33,6 +41,7 @@ class TalkBox extends React.Component {
       message: msg
     };
     this.props.onSendMessage(msg, selfMessage);
+    this.scrollToBottom();
   }
 
   render() {
@@ -41,7 +50,7 @@ class TalkBox extends React.Component {
         <div className="talk-box-header">
           <span className="talk-box-header-topic">{ this.state.topic }</span>
         </div>
-        <div className="talk-box-body">
+        <div className="talk-box-body" id={ this.talkBoxId }>
           {this.props.messages.map((item, i) => <TalkMessage key={i}
             message={ item.message } author={ item.author }
             selfPosted={ similarity(item.author, this.props.currentUser) === 1 } />)}

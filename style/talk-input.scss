@@ -1,0 +1,15 @@
+.talk-input {
+
+  &-wrapper {
+    display: flex;
+  }
+
+  &-raw {
+    height: 24px;
+    width: 100%;
+    padding: 4px 0.5%;
+    font-size: 14px;
+    border: none;
+  }
+
+}

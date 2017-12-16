@@ -2,12 +2,17 @@ require("../style/talk-input.scss");
 
 import React from "react";
 import PropTypes from "prop-types";
-import MdSend from "react-icons/lib/md/send";
+
+const isBlank = require("is-blank");
 
 class TalkInput extends React.Component {
 
   static propTypes = {
     onSendMessage: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    placeHolder: "Send a message"
   }
 
   constructor(props) {
@@ -17,21 +22,29 @@ class TalkInput extends React.Component {
     }
   }
 
-  onSendClick = () => {
-    this.props.onSendMessage(this.state.message);
-    this.setState({ message: "" });
+  onEnterPress = () => {
+    if (!isBlank(this.state.message)) {
+      this.props.onSendMessage(this.state.message);
+      this.setState({ message: "" });
+    }
   }
 
-  updateMessage = (msg) => {
-    this.setState({ message: msg })
+  handleOnChange = (e) => {
+    this.setState({ message: e.target.value });
+  }
+
+  catchReturn = (e) => {
+    if (e.key === "Enter") {
+      this.onEnterPress();
+    }
   }
 
   render() {
     return(
       <div className="talk-input-wrapper">
-        <input className="talk-input-raw" value={ this.state.message }
-          onChange={e => this.updateMessage(e.target.value)}/>
-        <MdSend onClick={e => this.onSendClick()}/>
+        <input className="talk-input-raw" onChange={ this.handleOnChange }
+          value={ this.state.message } onKeyPress={ this.catchReturn }
+          placeholder={ this.props.placeHolder }/>
       </div>
     );
   }
