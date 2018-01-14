@@ -5,11 +5,18 @@
   }
 
   &-raw {
-    height: 24px;
+    height: 28px;
     width: 100%;
-    padding: 4px 0.5%;
+    padding: 4px;
     font-size: 14px;
-    border: none;
+    border: 1px solid rgba(145, 145, 145, 0.39);
+    &:focus {
+      outline: none;
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+    &:disabled {
+      background: #FDF1C1;
+    }
   }
 
 }

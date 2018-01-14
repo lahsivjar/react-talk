@@ -9,6 +9,20 @@
     background: #404040;
     font-size: 14px;
     color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+
+  &-status {
+    color: #E53935;
+    padding: 0px 4px;
+    font-size: 16px;
+    &.connected {
+      color: #43A047;
+    }
+    &:before {
+      content: "\25cf";
+    }
   }
 
   &-body {
