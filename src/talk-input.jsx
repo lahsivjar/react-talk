@@ -21,7 +21,7 @@ class TalkInput extends React.Component {
     super(props);
     this.state = {
       message: "",
-      disabled: false
+      disabled: props.disabled
     };
   }
 
