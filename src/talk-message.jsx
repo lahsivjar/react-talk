@@ -2,7 +2,8 @@ require("../style/talk-message.scss");
 
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import Linkify from "linkifyjs/react";
+import ClassNames from "classnames";
 
 class TalkMessage extends React.Component {
 
@@ -24,22 +25,25 @@ class TalkMessage extends React.Component {
   }
 
   render() {
-    const topWrapper = classNames({
+    const topWrapper = ClassNames({
       "talk-message-wrapper": true,
       "right": this.props.selfPosted,
       "left": !this.props.selfPosted
     });
-    const contentWrapper = classNames({
+    const contentWrapper = ClassNames({
       "talk-message-content-wrapper": true,
       "right": this.props.selfPosted,
       "left": !this.props.selfPosted
     });
+    const linkifyOptions = {
+      "nl2br": true
+    };
     return(
       <div className={ topWrapper }>
         <div className={ contentWrapper }>
-          <span className="talk-message-content-span">
+          <Linkify className="talk-message-content-span" options={ linkifyOptions } >
             { this.state.message }
-          </span>
+          </Linkify>
         </div>
       </div>
     );
