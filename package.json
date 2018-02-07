@@ -1,6 +1,6 @@
 {
   "name": "react-talk",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "description": "React talk/chat component",
   "main": "./dist/index.js",
   "scripts": {
