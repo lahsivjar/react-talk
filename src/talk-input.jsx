@@ -37,8 +37,9 @@ class TalkInput extends React.Component {
   }
 
   catchReturn = (e) => {
-    if (e.key === "Enter") {
+    if (!(e.ctrlKey || e.shiftKey) && e.key === "Enter") {
       this.onEnterPress();
+      e.preventDefault();
     }
   }
 
@@ -51,7 +52,8 @@ class TalkInput extends React.Component {
   render() {
     return(
       <div className="talk-input-wrapper">
-        <input className="talk-input-raw" onChange={ this.handleOnChange }
+        <textarea cols="60" rows="3"
+          className="talk-input-raw" onChange={ this.handleOnChange }
           value={ this.state.message } onKeyPress={ this.catchReturn }
           disabled={ (this.state.disabled) ? "disabled" : "" }
           placeholder={ this.props.placeHolder }/>

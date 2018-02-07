@@ -8,8 +8,11 @@
     height: 28px;
     width: 100%;
     padding: 4px;
-    font-size: 14px;
+    font-size: 0.9375rem;
+    line-height: 1.9em;
+    color: #2f3136;
     border: 1px solid rgba(145, 145, 145, 0.39);
+    resize: none;
     &:focus {
       outline: none;
       border: 1px solid rgba(81, 203, 238, 1);

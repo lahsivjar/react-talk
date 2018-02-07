@@ -51,6 +51,10 @@ class TalkBox extends React.Component {
     this.scrollToBottom();
   }
 
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
   render() {
     const connectStatus = classNames({
       "talk-box-status": true,
