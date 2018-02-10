@@ -44,8 +44,14 @@ class App extends React.Component {
     this.setState(prevState => ({
         messages: [...prevState.messages, selfMsg]
     }));
-    // Insert code to send the message below
-    ...
+    // If message sending failed return false otherwise return true
+    try {
+      // Insert code to send the message below
+      ...
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   render() {
