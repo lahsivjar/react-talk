@@ -85,7 +85,7 @@ A complete implementation using SockJs, STOMP and springboot can be found at: ht
 
 Report any issues or bugs to https://github.com/lahsivjar/react-talk/issues
 
-# Major changes in version 1.0.0
+## Major changes in version 1.0.0
 
 * `currentUserId` property added to `TalkBox` which refers to the unique id of the current user
 * `onSendMessage` callback must return a boolean indicating send status
