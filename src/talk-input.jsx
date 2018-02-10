@@ -27,8 +27,9 @@ class TalkInput extends React.Component {
 
   onEnterPress = () => {
     if (!isBlank(this.state.message)) {
-      this.props.onSendMessage(this.state.message);
-      this.setState({ message: "" });
+      if (this.props.onSendMessage(this.state.message)) {
+        this.setState({ message: "" });
+      }
     }
   }
 

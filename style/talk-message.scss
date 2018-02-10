@@ -24,8 +24,12 @@
 
   &-wrapper {
     display: flex;
+    flex-direction: column;
     &.right {
-      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    &.left {
+      align-items: flex-start;
     }
   }
 
@@ -47,6 +51,22 @@
     }
     &-span {
       word-wrap: break-word;
+    }
+  }
+
+  &-metadata {
+    font-size: 11px;
+    color: rgba(0, 0, 0, .54);
+    margin-right: 12px;
+    margin-left: 12px;
+    &-timestamp {
+
+    }
+
+    &-author {
+      &.self-posted {
+        display: none;
+      }
     }
   }
 }
