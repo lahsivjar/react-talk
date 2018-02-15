@@ -77,7 +77,7 @@ A complete implementation using SockJs, STOMP and springboot can be found at: ht
 * `topic`: The topic of the chat. Will be displayed in the chat box header
 * `currentUserId`: User id for the current user who is using the chat box
 * `currentUser`: Display user name for the current user who is using the chat box
-* `messages`: An array of messages. Each message object should be according [schematized](#message-schema).
+* `messages`: An array of messages. Each message object should be [schematized](#message-schema).
 
 ### Message Schema
 ```
