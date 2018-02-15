@@ -84,8 +84,8 @@ A complete implementation using SockJs, STOMP and springboot can be found at: ht
 {  
     "authorId": <unique author id for the author>,
     "author": <author or user diplay name for the message>,
-    "message": <message>
-    "timestamp": <the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC"
+    "message": <message>,
+    "timestamp": <the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC>
 }
 ```
 
